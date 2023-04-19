@@ -13,9 +13,9 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/universitydb
+    url: jdbc:mysql://localhost:3306/university_db
     username: root
-    password: Mostafa123456789$
+    password: 123456789
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    jpa:
 #      properties:

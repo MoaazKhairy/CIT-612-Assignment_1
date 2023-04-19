@@ -8,6 +8,14 @@ spring:
           uri: lb://course-service
           predicates:
             - Path=/api/courses/**
+        - id: enrollment-service
+          uri: lb://enrollment-service
+          predicates:
+            - Path=/api/enrollments/**
+        - id: student-service
+          uri: lb://student-service
+          predicates:
+            - Path=/api/students/**
   eureka:
     client:
       serviceUrl:
