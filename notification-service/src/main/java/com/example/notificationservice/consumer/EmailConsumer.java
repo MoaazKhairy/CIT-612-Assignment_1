@@ -28,7 +28,7 @@ public class EmailConsumer {
         logger.info("Adding new enrollment received {}", message);
         JSONObject enrollmentId = (JSONObject) message.get("enrollmentId");
         String studentEnrolledEmail = message.get("studentEnrolEmail").toString();
-        emailSenderService.sendSimpleEmail(studentEnrolledEmail,"New Enrollment Request", "New Enrollment Request added: " +message);
+        emailSenderService.sendSimpleEmail(studentEnrolledEmail,"New Enrollment Request", "New Enrollment Request added: " + "\n" + "Course Code: " + enrollmentId.get("courseEnrolledId").toString() + "\n" + "Student ID: " + enrollmentId.get("studentEnrolledId").toString() +  "\n" + "Enrolled Date: " + message.get("enrolledDate").toString());
     }
 
 }

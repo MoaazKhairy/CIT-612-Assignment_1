@@ -28,13 +28,13 @@ public class EnrollmentController {
         return enrollmentService.fetchEnrollmentsByStudentId(studentEnrolledId);
     }
 
-    @DeleteMapping("/api/enrollments/{studentId}/{courseId}")
-    public String deleteEnrollment(@PathVariable("studentId") Long studentId, @PathVariable("courseId") String courseCode){
+    @DeleteMapping("/api/enrollments/{studentId}/{courseCode}")
+    public String deleteEnrollment(@PathVariable("studentId") Long studentId, @PathVariable("courseCode") String courseCode){
         return enrollmentService.deleteEnrollment(studentId, courseCode);
     }
 
-    @PutMapping("/api/enrollments/{studentId}/{courseId}")
-    public Enrollment updateEnrollment(@PathVariable("studentId") Long studentId, @PathVariable("courseId") String courseCode, @RequestBody Enrollment enrollment){
+    @PutMapping("/api/enrollments/{studentId}/{courseCode}")
+    public Enrollment updateEnrollment(@PathVariable("studentId") Long studentId, @PathVariable("courseCode") String courseCode, @RequestBody Enrollment enrollment){
         return enrollmentService.updateEnrollment(studentId, courseCode, enrollment);
     }
 }

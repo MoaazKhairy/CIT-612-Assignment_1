@@ -26,12 +26,6 @@ public class EnrollmentServiceImpl implements EnrollmentService {
     @Autowired
     private EnrollmentRepository enrollmentRepository;
 
-//    @Autowired
-//    private CourseServiceImpl courseService;
-
-//    @Autowired
-//    private StudentServiceImpl studentService = new StudentServiceImpl();
-
     private final EmailService emailService;
 
     public static final LocalDate ADD_DROP_FINAL_DATE = LocalDate.now();
@@ -43,12 +37,6 @@ public class EnrollmentServiceImpl implements EnrollmentService {
         if (isEnrollmentExists(enrollment.getEnrollmentId())){
             return "This Enrollment is already exists";
         }
-//        if (!courseService.isDataIdExists(enrollment.getEnrollmentId().getCourseEnrolledId())){
-//            return "This Course is not existed in courses table";
-//        }
-//        if (!studentService.isStudentExists(enrollment.getEnrollmentId().getStudentEnrolledId())){
-//            return "This Student is not existed in students table";
-//        }
         if (enrollment.getEnrolledDate() == null){
             enrollment.setEnrolledDate(LocalDate.now());
         }
